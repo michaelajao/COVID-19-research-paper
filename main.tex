@@ -1,0 +1,123 @@
+\documentclass{article}
+
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}      % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\title{COVID-19 research paper}
+\author{
+    Michael Ajao-olarinoye\\
+    Centre for computational science and mathematical modelling\\
+    coventry university\\
+    Coventry, CV1 3EQ \\
+    \texttt{olarinoyem@uni.coventry.ac.uk}\\
+    }
+
+\begin{document}
+
+\maketitle
+
+\section{Epidemiological modelling}
+
+\begin{align}
+    \frac{dS}{dt} &= \lambda N - \frac{\beta SI}{N} - \delta S + \epsilon R \\
+    \frac{dE}{dt} &= \frac{\beta SI}{N} - \alpha E - \delta E \\
+    \frac{dI}{dt} &= \alpha E - \gamma I - \mu I - \delta I \\
+    \frac{dR}{dt} &= \gamma I - \epsilon R - \delta R \\
+    \frac{dD}{dt} &= \mu I + \mu R
+\end{align}
+    
+where:
+\begin{itemize}
+    \item $S$: the number of susceptible individuals,
+    \item $E$: the number of exposed individuals,
+    \item $I$: the number of infected individuals,
+    \item $R$: the number of recovered individuals,
+    \item $D$: the number of deceased individuals,
+    \item $N$: the total population size,
+    \item $\lambda$: the birth rate of the population,
+    \item $\beta$: the rate of infection transmission,
+    \item $\alpha$: the rate of latent individuals becoming infectious,
+    \item $\gamma$: the recovery rate of infected individuals,
+    \item $\mu$: the mortality rate of infected individuals,
+    \item $\delta$: the natural death rate of the population,
+    \item $\epsilon$: the rate of recovery individuals becoming immune.
+\end{itemize}
+    
+    $S$: number of susceptible individuals
+    $E$: number of exposed individuals
+    $I$: number of infected individuals
+    $R$: number of recovered individuals
+    $D$: number of deceased individuals
+    $N$: total population
+    $\lambda$: birth rate
+    $\beta$: transmission rate
+    $\alpha$: inverse of the average incubation period
+    $\gamma$: inverse of the average infectious period
+    $\mu$: mortality rate
+    $\delta$: natural death rate
+    $\epsilon$: recovery rate
+
+
+The SEIRD model is represented by this system of differential equations (Susceptible-Exposed-Infected-Recovered-Dead).
+
+This model divides the population into five categories: susceptible (S), exposed (E), infected (I), recovered (R), and deceased (D) (D). A set of five differential equations describes the change in the number of persons within each compartment over time.
+
+
+The first equation indicates the change in susceptible people over time (dS/dt). It is affected by four variables:
+
+The birth rate (N) that adds vulnerable population members at a rate proportionate to the population size (N).
+The rate of infection (SI/N) which is proportional to the number of susceptible individuals (S) and infected people (I) in touch with each other and scaled by the population size (N).
+The rate of natural death (S) that reflects the number of vulnerable persons that perish each day from causes unrelated to the illness being modelled.
+The rate of immunity (R) that defines the number of vulnerable individuals that develop immunity each day as a result of illness recovery or vaccination.
+The second equation reflects the time-dependent variation in the number of persons exposed (dE/dt). It is affected by three variables:
+
+The rate of infection (SI/N) which is proportional to the number of susceptible individuals (S) and infected people (I) in touch with each other and scaled by the population size (N).
+The progression rate to the infectious stage (E) is the pace at which exposed people become infectious.
+The rate of natural mortality (E) that indicates the number of exposed individuals that die each day from causes unrelated to the modelled illness.
+The third equation reflects the time-dependent variation in the number of infected persons (dI/dt). It is affected by four variables:
+
+E defines the pace at which exposed persons become infectious.
+The rate of recovery (I) that defines how quickly infected people recover and develop immunity.
+The rate of disease-induced death (I) that describes the number of infected persons that perish daily as a result of the disease being represented.
+The rate of natural death (I) that reflects the number of infected persons that die each day owing to circumstances unrelated to the modelled illness.
+The fourth equation reflects the change in recovered people over time (dR/dt). It is affected by three variables:
+
+The rate of recovery (I) that defines how quickly infected people recover and develop immunity.
+The rate of immunity loss (R) that reflects the daily number of recovered persons who lose their immunity and become vulnerable.
+The rate of natural death (R) that quantifies the number of recovered patients who die each day from causes unrelated to the disease being modelled.
+The fifth equation describes the change in the number of deceased over time (dD/dt). It is affected by two variables:
+
+The rate of disease-induced death (I) that describes the number of infected persons that perish daily as a result of the disease being represented.
+The rate of recovery-induced death (R) which indicates the number of recovered persons who pass away each day as a result of circumstances associated to their prior infection.
+
+
+\textbf{Equations:}
+
+The system of differential equations is given by:
+
+\begin{align*}
+    \frac{dS}{dt} &= \lambda N - \frac{\beta S I}{N} - \delta S + \epsilon R \
+    \frac{dE}{dt} &= \frac{\beta S I}{N} - \alpha E - \delta E \
+    \frac{dI}{dt} &= \alpha E - \gamma I - \mu I - \delta I \
+    \frac{dR}{dt} &= \gamma I - \epsilon R - \delta R \
+    \frac{dD}{dt} &= \mu I + \mu R
+\end{align*}
+
+where,
+
+
+
+The first equation represents the rate of change of susceptible individuals, which depends on the birth rate, the rate of infection transmission, the natural death rate, and the rate of recovery individuals becoming immune. The second equation represents the rate of change of exposed individuals, which depends on the rate of infection transmission, the rate of latent individuals becoming infectious, and the natural death rate. The third equation represents the rate of change of infected individuals, which depends on the rate of latent individuals becoming infectious, the recovery rate, the mortality rate, and the natural death rate. The fourth equation represents the rate of change of recovered individuals, which depends on the recovery rate, the rate of recovery individuals becoming immune, and the natural death rate. Finally, the fifth equation represents the rate of change of deceased individuals, which depends on the mortality rate of infected individuals.
+\end{document}
